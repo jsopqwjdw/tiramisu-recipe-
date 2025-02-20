@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiramisu Cafe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            box-sizing: border-box;
+        }
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+        header {
+            background-color: #7a5c58;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .page-title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 40px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: none;
+        }
+        .container.active {
+            display: block;
+        }
+        h1, h2 {
+            color: #7a5c58;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #7a5c58;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .ingredient-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .ingredient-item img {
+            width: 10%;
+            max-width: 100px;
+            height: auto;
+            margin-right: 10px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+        .link-button {
+            display: inline-block;
+            background-color: #7a5c58;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 20px auto;
+            display: block;
+            text-align: center;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .link-button:hover {
+            background-color: #5c403d;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.container');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</head>
+<body onload="showSection('about')">
+    <header>
+        <h1>Welcome to Tiramisu Cafe</h1>
+        <div class="page-title">Tiramisu Recipe</div>
+    </header>
+    <div id="about" class="container">
+        <h2>About Tiramisu</h2>
+        <p>Tiramisu is a classic Italian dessert that translates to "pick me up." It is a delightful combination of coffee-soaked ladyfingers layered with a rich mascarpone cream and topped with cocoa powder. This dessert is perfect for coffee and dessert lovers alike!</p>
+        <div class="image-container">
+            <img src="./tiramisu/img.jpeg" alt="Tiramisu close-up">
+            <img src="./tiramisu/img1.jpeg" alt="Tiramisu served on a plate">
+        </div>
+        <button class="link-button" onclick="showSection('ingredients')">View Ingredients</button>
+    </div>
+    <div id="ingredients" class="container">
+        <h2>Ingredients</h2>
+        <div class="ingredient-item">
+            <img src="./ingredients/ing.jpeg" alt="Egg yolks">
+            <span>6 large egg yolks</span>
+        </div>
+        <div class="ingredient-item">
+            <img src="./ingredients/ing1.jpeg" alt="Granulated sugar">
+            <span>3/4 cup granulated sugar</span>
+        </div>
+        <div class="ingredient-item">
+            <img src="./ingredients/ing2.jpeg" alt="Milk">
+            <span>2/3 cup milk</span>
+        </div>
+        <div class="ingredient-item">
+            <img src="./ingredients/ing3.jpeg" alt="Heavy cream">
+            <span>1 1/4 cups heavy cream</span>
+        </div>
+        <div class="ingredient-item">
+            <img src="./ingredients/ing4.jpeg" alt="Vanilla extract">
+            <span>1/2 teaspoon vanilla extract</span>
+        </div>
+        <div class="ingredient-item">
+            <img src="./ingredients/ing5.jpeg" alt="Mascarpone cheese">
+            <span>8 ounces mascarpone cheese</span>
+        </div>
+        <div class="ingredient-item">
+            <img src="./ingredients/ing6.jpeg" alt="Brewed espresso">
+            <span>1 cup brewed espresso or strong coffee, cooled</span>
+        </div>
+        <div class="ingredient-item">
+            <img src="./ingredients/ing7.jpeg" alt="Coffee liqueur">
+            <span>1/4 cup coffee liqueur (optional)</span>
+        </div>
+        <div class="ingredient-item">
+            <img src="./ingredients/ing8.jpeg" alt="Ladyfingers">
+            <span>24-30 ladyfingers</span>
+        </div>
+        <div class="ingredient-item">
+            <img src="./ingredients/ing9.jpeg" alt="Cocoa powder">
+            <span>2 tablespoons unsweetened cocoa powder</span>
+        </div>
+        <button class="link-button" onclick="showSection('about')">Back to About</button>
+    </div>
+    <footer>
+        <p>&copy; 2025 Tiramisu Cafe</p>
+    </footer>
+</body>
+</html>
